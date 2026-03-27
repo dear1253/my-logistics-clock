@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: transparent;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden;
+        }
+        #clock {
+            color: #0018FF; /* สีหลักของคุณ */
+            font-size: 60px; /* ขนาดใหญ่ชัดเจน */
+            font-weight: 900;
+            letter-spacing: -2px;
+            padding: 10px 20px;
+            background: #F0F4FF; /* พื้นหลังน้ำเงินพาสเทล */
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 24, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">00:00:00</div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const time = now.toLocaleTimeString('th-TH', { 
+                hour12: false, 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
+            });
+            document.getElementById('clock').innerText = time;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
